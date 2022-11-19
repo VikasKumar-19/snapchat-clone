@@ -4,7 +4,7 @@ import cameraReducer from '../features/cameraSlice';
 
 export default configureStore({
   reducer: {
-    app: appReducer,
+    // app: appReducer,
     camera: cameraReducer
   }
 })

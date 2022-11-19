@@ -1,7 +1,11 @@
 import { RadioButtonChecked } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import React, { useCallback, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
+import { setCameraImage } from "./features/cameraSlice";
+import "./webcamCapture.css";
 
 const videoConstraints = {
   width: 250,
@@ -11,15 +15,14 @@ const videoConstraints = {
 
 const WebCamCapture = () => {
   const webcamRef = useRef(null);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const capture = useCallback(
-    () => {
-      const imgSrc = webcamRef.current.getScreenshot();
-      
-    },
-    [webcamRef],
-  )
-  
+  const capture = useCallback(() => {
+    const imgSrc = webcamRef.current.getScreenshot();
+    dispatch(setCameraImage(imgSrc));
+    navigate("/preview");
+  }, [webcamRef]);
 
   return (
     <div className="webcamCapture">
@@ -31,10 +34,9 @@ const WebCamCapture = () => {
         ref={webcamRef}
         screenshotFormat="image/jpeg"
       />
-      <IconButton onClick={capture}>
-        <RadioButtonChecked fontSize="large" className="webcamCapture_button" />
+      <IconButton  className="webcamCapture__button" onClick={capture}>
+        <RadioButtonChecked fontSize="large" />
       </IconButton>
-      <img src={image} alt="" />
     </div>
   );
 };
