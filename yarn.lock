@@ -1752,6 +1752,11 @@ protobufjs@^7.0.0:
     "@types/node" ">=13.7.0"
     long "^5.0.0"
 
+react-countdown-circle-timer@^3.0.9:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/react-countdown-circle-timer/-/react-countdown-circle-timer-3.0.9.tgz#9bdf127c63f9c67dc12bc83cb8029765512b1f5f"
+  integrity sha512-2rE2NklqgtArbvM9RVR3NctiKQ8+lY8PEjUZ2S1pKowD8CmaXUGqIaCbFBcygYH2aZQs9qPIQA49Z+9Jc2TOiQ==
+
 react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
@@ -1801,6 +1806,11 @@ react-router@6.4.3:
   integrity sha512-BT6DoGn6aV1FVP5yfODMOiieakp3z46P1Fk0RNzJMACzE7C339sFuHebfvWtnB4pzBvXXkHP2vscJzWRuUjTtA==
   dependencies:
     "@remix-run/router" "1.0.3"
+
+react-timeago@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/react-timeago/-/react-timeago-7.1.0.tgz#248bc6aa40a561249e756b2df402c94f1a296a85"
+  integrity sha512-rouF7MiEm55fH791Y8cg+VobIJgx8gtNJ+gjr86R4ZqO1WKPkXiXjdT/lRzrvEkUzsxT1exHqV2V+Zdi114H3A==
 
 react-transition-group@^4.4.5:
   version "4.4.5"

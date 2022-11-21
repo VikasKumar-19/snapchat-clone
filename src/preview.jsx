@@ -19,9 +19,12 @@ import { v4 as uuid } from "uuid";
 import "./preview.css";
 import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { selectUser } from "./features/appSlice";
 
 const Preview = () => {
   const cameraImage = useSelector(selectCameraImage);
+  const user = useSelector(selectUser);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -39,15 +42,18 @@ const Preview = () => {
     const id = uuid();
     const storageRef = ref(storage, `posts/${id}`);
     uploadString(storageRef, cameraImage, "data_url").then((snapshot) => {
-      getDownloadURL(snapshot.ref).then((url) => {
-        addDoc(collection(db, "posts"), {
-          imageUrl: url,
-          userName: "Vikas", 
-          read: false,
-          //profile pic
-          timestamp: serverTimestamp()
+      getDownloadURL(snapshot.ref)
+        .then((url) => {
+          addDoc(collection(db, "posts"), {
+            imageUrl: url,
+            userName: "Vikas",
+            profilePic: user.profilePic,
+            timestamp: serverTimestamp(),
+            seenBy: [],
+          });
+          navigate("/chats", { replace: true });
         })
-      });
+        .catch((err) => alert(err.message));
     });
   };
 

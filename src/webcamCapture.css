@@ -1,5 +1,7 @@
 .webcamCapture {
   position: relative;
+  height: 400px;
+  width: 250px;
 }
 
 .webcamCapture__button{
@@ -11,3 +13,10 @@
   color: white!important;
 }
 
+.goToChat{
+  position: absolute;
+  color: white;
+  bottom: 0;
+  right: 0;
+  transform: translate(-50%, -100%);
+}

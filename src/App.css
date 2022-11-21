@@ -5,4 +5,21 @@
   justify-content: center;
   background-color: #fefc01;
   height: 100vh;
+  gap: 20px;
 }
+
+.app__body{
+  background: url("./assets//phone-img.png");
+  background-repeat: no-repeat;
+  background-size: 260px 500px;
+  height: 500px;
+  width: 260px;
+  padding-top: 50px;
+  padding-left: 5.3px;
+}
+
+.app__logo{
+  object-fit: contain;
+  height: 100px;
+}
+

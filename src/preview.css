@@ -13,7 +13,7 @@
 .preview__toolbarRight{
   position: absolute;
   top: 1rem;
-  right: 0;
+  right: 0.4rem;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -37,7 +37,6 @@
   border-radius: 30px;
   padding: 0px 10px;
   cursor: pointer;
-  margin-bottom: 5px;
 
 }
 

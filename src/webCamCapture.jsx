@@ -1,8 +1,8 @@
-import { RadioButtonChecked } from "@mui/icons-material";
+import { Chat, RadioButtonChecked } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import React, { useCallback, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Webcam from "react-webcam";
 import { setCameraImage } from "./features/cameraSlice";
 import "./webcamCapture.css";
@@ -34,9 +34,12 @@ const WebCamCapture = () => {
         ref={webcamRef}
         screenshotFormat="image/jpeg"
       />
-      <IconButton  className="webcamCapture__button" onClick={capture}>
+      <IconButton className="webcamCapture__button" onClick={capture}>
         <RadioButtonChecked fontSize="large" />
       </IconButton>
+      <Link to="/chats">
+        <Chat className="goToChat" />
+      </Link>
     </div>
   );
 };

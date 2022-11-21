@@ -7,21 +7,31 @@ import store from "./app/store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Preview from "./preview";
 import WebCamCapture from "./webCamCapture";
+import Chats from "./chats";
+import ChatView from "./ChatView";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children:[
+    children: [
       {
         path: "/",
-        element: <WebCamCapture />
+        element: <WebCamCapture />,
       },
       {
         path: "preview",
-        element: <Preview />
-      }
-    ]
+        element: <Preview />,
+      },
+      {
+        path: "chats",
+        element: <Chats />,
+      },
+      {
+        path: "/chats/view",
+        element: <ChatView />,
+      },
+    ],
   },
 ]);
 
