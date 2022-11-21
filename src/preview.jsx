@@ -46,7 +46,7 @@ const Preview = () => {
         .then((url) => {
           addDoc(collection(db, "posts"), {
             imageUrl: url,
-            userName: "Vikas",
+            userName: user.userName,
             profilePic: user.profilePic,
             timestamp: serverTimestamp(),
             seenBy: [],
